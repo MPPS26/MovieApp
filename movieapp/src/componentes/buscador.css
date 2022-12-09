@@ -1,0 +1,35 @@
+
+*{
+    background-color: black;
+
+}
+.search{
+    cursor: pointer;
+    border-right: 1px solid rgba(250, 11, 255, 1);
+    border-left: 1px solid rgba(250, 11, 255, 1);
+    border-bottom: 1px solid rgba(250, 11, 255, 1);
+
+}
+
+.search:hover{
+    background-color: rgba(250, 11, 255, 1);
+    opacity: .4;
+
+}
+
+.col-md-12::before{
+    border: 2px rgba(250, 11, 255, 1);
+    border-radius: 5px;
+  
+
+}
+
+.container{
+    background-color: black;
+}
+
+.col-md-12{
+    background-color: rgba(250, 11, 255, 1);
+    border: rgba(250, 11, 255, 1);
+    
+}

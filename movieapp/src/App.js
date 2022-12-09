@@ -1,12 +1,14 @@
 
 import Buscador from "./componentes/buscador";
+import SingleMovie from "./componentes/SingleMovie";
 
 function App() {
 
   return (
   
   <div className="App">
-<Buscador/>
+<Buscador className="search"/>
+element={<SingleMovie/>} 
   
   </div>
   )
