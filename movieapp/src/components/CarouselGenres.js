@@ -5,14 +5,17 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import React, { Component } from "react";
 import Slider from "react-slick";
-import { Link } from 'react-router-dom';
-import { useParams } from 'react-router-dom';
+import MovieByGenrePage from './Pages/MovieByGenrePage';
+import { useNavigate, useParams } from 'react-router-dom';
 
 
 
 function CarouselGenres(movie) {
 
+  const navigate = useNavigate();
   const [genreData, setGenreData] = useState([]);
+  const [genre, setGenre] = useState();
+
 
   useEffect(() => {
     const getGenreData = async () => {
@@ -22,7 +25,7 @@ function CarouselGenres(movie) {
     }
     getGenreData();
   }, [])
-  
+
 
 
   /*función para las flechas*/
@@ -85,19 +88,19 @@ function CarouselGenres(movie) {
 
         <Slider {...settingsGenres}>
           {genreData.map((genre) => {
+
             return (
-              <Link to={`genre/${genre.id}`}>
-                <button key={genre.id}>{genre.name}</button>
-              </Link>
 
+              <button key={genre.id} onClick={()=>{navigate(`genre/${genre.id}/ ${genre.name}`)}}>
+          {genre.name}</button>
 
-            )
+        )
           })
           }
-        </Slider>
+      </Slider>
 
-      </div>
     </div>
+    </div >
   );
 }
 

@@ -1,19 +1,19 @@
 import React from 'react';
 import '../../styles/movieByGenrePage.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 function ReturnButton() {
+
+    const navigate=useNavigate();
 
 
     return (
         <>
 
-            <Link to="/" >
-                <button className='returnButton'>
+                <button className='returnButton' onClick={()=>navigate(-1)}>
                     <img src='https://cdn-icons-png.flaticon.com/512/8893/8893000.png' width="16px" />   Volver
                 </button>
-            </Link>
 
         </>
     )

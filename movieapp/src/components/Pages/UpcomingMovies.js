@@ -6,9 +6,10 @@ import { useEffect, useState } from 'react';
 import ReturnButton from '../buttons/ReturnButton';
 import Buscador from '../search-box/buscador';
 import Rating from '@mui/material/Rating';
+import { useNavigate } from 'react-router-dom';
 //Import css
 import '../../styles/upcomingMovies.css';
-import { display } from '@mui/system';
+import HomeButton from '../buttons/HomeButton';
 
 //const API_KEY = '90c2c57ed9eabcec0ae2b8ebe7b81547';
 
@@ -16,6 +17,7 @@ import { display } from '@mui/system';
 
 function UpcomingMovies() {
 
+    const navigate = useNavigate();
     const [movies, setMovies] = useState([]);
     const [pages, setPages] = useState(1);
 
@@ -28,7 +30,6 @@ function UpcomingMovies() {
         const getMoviesData = async () => {
             const respMovies = await axios.get(urlUpcomingMovies);
             setMovies(respMovies.data.results);
-            console.log(respMovies.data.results);
         }
         getMoviesData();
     }, [pages])
@@ -40,6 +41,7 @@ function UpcomingMovies() {
             <div className='upcomingHeader'>
                 <h1 className='upcoming'>| Próximos estrenos <img src='https://cdn-icons-png.flaticon.com/512/8893/8893034.png' width="19px" /></h1>
                 <ReturnButton />
+                <HomeButton />
             </div>
             <div className='search-box'>
                 <Buscador />
@@ -50,11 +52,13 @@ function UpcomingMovies() {
 
                 {movies.map((movie) =>
                     <div className='movies'>
-                        <img className="poster" src={urlImg + movie.poster_path} alt="SIN IMAGEN DISPONIBLE" width="220px" />
-                        <p className='title'>{movie.title}</p>
-                        <p className='rating'>{movie.vote_average / 2} / 5</p>
-                        <Rating className="ratingComp" name="half-rating-read" value={movie.vote_average / 2} precision={0.1} max={5} readOnly />
-                        <div key={movie.id} />
+                        <div onClick={() => navigate(`/${movie.id}`)}>
+                            <img className="poster" src={urlImg + movie.poster_path} alt="SIN IMAGEN DISPONIBLE" width="220px" />
+                            <p className='title'>{movie.title}</p>
+                            <p className='rating'>{movie.vote_average / 2} / 5</p>
+                            <Rating className="ratingComp" name="half-rating-read" value={movie.vote_average / 2} precision={0.1} max={5} readOnly />
+                            <div key={movie.id} />
+                        </div>
                     </div>
                 )}
 
