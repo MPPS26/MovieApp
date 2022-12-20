@@ -7,7 +7,7 @@ function Buscador() {
 
   const [films, setFilms] = useState([])
   const [movie, setMovie] = useState()
-  const navigate = useNavigate() //("/movie/:id")  //esta constante me hace la funcion de navegación
+  const navigate = useNavigate() 
 
 
   const onSearchHandler = (movieTitle) => {
@@ -46,7 +46,7 @@ function Buscador() {
               return (navigate(`/ ${search.id}`))
             }}>{search.title}
 
-            {/* // onClick={() => search.length == 1 ? onSearchHandler(search.title) : (search.map(films => onSearchHandler(films.title)))} >{search.title}  */}
+            
             {console.log(search, "esta es la linea")}
             <h4 className='text center'>{films.title}</h4>
           </div>
