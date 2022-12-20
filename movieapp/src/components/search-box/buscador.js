@@ -47,7 +47,7 @@ function Buscador() {
             }}>{search.title}
 
             
-            {console.log(search, "esta es la linea")}
+
             <h4 className='text center'>{films.title}</h4>
           </div>
         })}
