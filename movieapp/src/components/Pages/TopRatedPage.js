@@ -1,12 +1,9 @@
 import React from 'react';
 import axios from 'axios';
-// import hooks
 import { useEffect, useState } from 'react';
-//import components
 import ReturnButton from '../buttons/ReturnButton';
 import Buscador from '../search-box/buscador';
 import Rating from '@mui/material/Rating';
-//Import css
 import '../../styles/topRated.css';
 import { useNavigate } from 'react-router-dom';
 import HomeButton from '../buttons/HomeButton';
