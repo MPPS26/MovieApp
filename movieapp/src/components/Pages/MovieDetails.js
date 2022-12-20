@@ -1,11 +1,8 @@
 import axios from 'axios'
-//import hooks
 import React, { useState, useEffect } from 'react';
 import { useParams } from "react-router-dom";
-//import components
 import Rating from '@mui/material/Rating';
 import Header from '../Header.js';
-//import styles
 import '../../styles/MovieDetails.css';
 import HeaderWithBtns from '../HeaderWithBtns.js';
 
