@@ -61,7 +61,6 @@ function CarouselGenres(movie) {
         }
       }
     ]
-    /*prevArrow: <SamplePrevArrow/>*/
   };
 
 
