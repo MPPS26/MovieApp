@@ -73,7 +73,7 @@ function NowPlaying() {
                 </button>
 
                 <p id='page' >
-                    {pages < 0 ? pages : pages} de 20
+                    {pages} de 20
                 </p>
 
                 <button id='next' onClick={() => {
